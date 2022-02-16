@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  layer_builder:
+    image: lambci/lambda:build-python3.8
+    working_dir: "/lambda_layer"
+    entrypoint: ["/lambda_layer/build_layer.sh"]
+    volumes:
+      - ./lambda_layer:/lambda_layer
